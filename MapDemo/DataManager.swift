@@ -24,7 +24,7 @@ class DataManager {
     let MAX_ROWS = 1000
     let API_KEY = "keyB1vGhVW0BcM4lc"
     
-    func refreshData() {
+    func refreshData(onComplete: @escaping ()->()) {
         let scheme = "https"
         let host = "api.airtable.com"
         let path = "/v0/" + base + "/" + table
@@ -37,9 +37,9 @@ class DataManager {
         urlComponents.host = host
         urlComponents.path = path
         urlComponents.queryItems = [keyQ, recordsQ, viewQ]
+        self.fieldNames = []
+        self.data = []
         guard let urlString = urlComponents.url?.absoluteString else {
-            data = []
-            fieldNames = []
             print("invalid data")
             return
         }
@@ -48,8 +48,7 @@ class DataManager {
             if((responseData.result.value) != nil) {
                 let json = JSON(responseData.result.value!)
                 print(json)
-                self.fieldNames = []
-                self.data = []
+                
                 for (key, _) in json["records"][0]["fields"] {
                     self.fieldNames.append(key)
                 }
@@ -63,9 +62,7 @@ class DataManager {
                     }
                     self.data.append(fields)
                 }
-                
-                print(self.data)
-                print(self.fieldNames)
+                onComplete()
             }
         }
     }

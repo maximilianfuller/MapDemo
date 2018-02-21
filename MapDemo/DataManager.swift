@@ -28,7 +28,7 @@ class DataManager {
     func refreshData(onComplete: @escaping ()->()) {
         if let urlString = getRecordsRequestString() {
             requestRecords(urlString: urlString) {
-                onComplete()
+                self.performGeoCoding(onComplete: onComplete)
             }
         }
     }
@@ -73,5 +73,13 @@ class DataManager {
                 onComplete()
             }
         }
+    }
+    
+    func performGeoCoding(onComplete: @escaping ()->()) {
+        //send geocode reqeusts for all values that need to be geocoded
+        //wait until all requests have returned
+        //call onComplete
+        
+        onComplete()
     }
 }

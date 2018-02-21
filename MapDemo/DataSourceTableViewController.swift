@@ -52,6 +52,7 @@ class DataSourceTableViewController : UITableViewController, UINavigationControl
             locationCell.isUserInteractionEnabled = true
             locationCell.textLabel?.text = DataManager.instance.fieldNames[currentLocationColSelected]
         }
+        DataManager.instance.locationColumnIndex = currentLocationColSelected
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

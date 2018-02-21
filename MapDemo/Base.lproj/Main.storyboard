@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -103,7 +104,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Grid View" placeholder="Required" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QV7-wZ-cNG">
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Grid view" placeholder="Required" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QV7-wZ-cNG">
                                                     <rect key="frame" x="81" y="8" width="278" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <nil key="textColor"/>
@@ -145,7 +146,13 @@
                             <outlet property="delegate" destination="c9k-Ut-tRy" id="5X2-rl-ZwH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Choose a data source!" id="hYq-UJ-ePW"/>
+                    <navigationItem key="navigationItem" title="Choose a data source!" id="hYq-UJ-ePW">
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="djP-od-Tz8">
+                            <connections>
+                                <segue destination="OE2-dq-0Tx" kind="show" id="uoZ-W7-2OI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="baseTextField" destination="Jxf-3N-8TK" id="M8j-NQ-7hm"/>
                         <outlet property="locationCell" destination="JBC-sX-b1c" id="Bcl-x1-QYf"/>
@@ -156,6 +163,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTj-rP-MNM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-234.40000000000001" y="-26.53673163418291"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="LqB-wu-wVy">
+            <objects>
+                <viewController id="OE2-dq-0Tx" customClass="MapViewController" customModule="MapDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cyn-Fn-Fg6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2dS-4B-H9O"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="45I-gq-glQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="406" y="-341"/>
         </scene>
         <!--Detail Table View Controller-->
         <scene sceneID="d8z-qn-lkC">
@@ -199,7 +221,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dyu-Ie-amC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="496.80000000000001" y="-27.436281859070466"/>
+            <point key="canvasLocation" x="506" y="242"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qvv-wL-gkZ">

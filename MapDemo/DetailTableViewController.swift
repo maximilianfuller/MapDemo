@@ -28,6 +28,11 @@ class DetailTableViewController : UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell")!
         cell.textLabel!.text = DataManager.instance.fieldNames[indexPath.item]
+        if indexPath.item == selectedIndex {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
         return cell
     }
     

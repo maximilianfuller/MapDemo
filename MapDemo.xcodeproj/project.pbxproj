@@ -18,6 +18,7 @@
 		761F51DE203DCEAD00C840A5 /* DataSourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761F51DD203DCEAD00C840A5 /* DataSourceTableViewController.swift */; };
 		761F51E0203DD26100C840A5 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761F51DF203DD26100C840A5 /* DataManager.swift */; };
 		761F51E4203DEE8400C840A5 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761F51E3203DEE8400C840A5 /* DetailTableViewController.swift */; };
+		761F51E8203DFDE700C840A5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761F51E7203DFDE700C840A5 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		761F51DD203DCEAD00C840A5 /* DataSourceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceTableViewController.swift; sourceTree = "<group>"; };
 		761F51DF203DD26100C840A5 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		761F51E3203DEE8400C840A5 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		761F51E7203DFDE700C840A5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9A8FB6489D8EDFFDAAA351D0 /* Pods_MapDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8C0CD7C5838DDF429FC581 /* Pods-MapDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapDemo/Pods-MapDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		E577F45FEB18712EA1FA13C8 /* Pods-MapDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapDemo/Pods-MapDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				761F51DD203DCEAD00C840A5 /* DataSourceTableViewController.swift */,
 				761F51E3203DEE8400C840A5 /* DetailTableViewController.swift */,
 				761F51DF203DD26100C840A5 /* DataManager.swift */,
+				761F51E7203DFDE700C840A5 /* MapViewController.swift */,
 			);
 			path = MapDemo;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				761F5178203DB77F00C840A5 /* ViewController.swift in Sources */,
+				761F51E8203DFDE700C840A5 /* MapViewController.swift in Sources */,
 				761F51E0203DD26100C840A5 /* DataManager.swift in Sources */,
 				761F51DE203DCEAD00C840A5 /* DataSourceTableViewController.swift in Sources */,
 				761F51E4203DEE8400C840A5 /* DetailTableViewController.swift in Sources */,

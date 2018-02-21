@@ -17,6 +17,7 @@ class DataManager {
     var base: String = ""
     var table: String = ""
     var view: String = ""
+    var locationColumnIndex: Int = 0
     
     var data: [[String]] = []
     var fieldNames: [String] = []
@@ -25,12 +26,20 @@ class DataManager {
     let API_KEY = "keyB1vGhVW0BcM4lc"
     
     func refreshData(onComplete: @escaping ()->()) {
+        if let urlString = getRecordsRequestString() {
+            requestRecords(urlString: urlString) {
+                onComplete()
+            }
+        }
+    }
+    
+    func getRecordsRequestString() -> String? {
         let scheme = "https"
         let host = "api.airtable.com"
         let path = "/v0/" + base + "/" + table
         let keyQ = URLQueryItem(name: "api_key", value: API_KEY)
         let recordsQ = URLQueryItem(name: "maxRecords", value: String(MAX_ROWS))
-        let viewQ = URLQueryItem(name: "view", value: "Grid view")
+        let viewQ = URLQueryItem(name: "view", value: view)
         
         var urlComponents = URLComponents()
         urlComponents.scheme = scheme
@@ -39,11 +48,10 @@ class DataManager {
         urlComponents.queryItems = [keyQ, recordsQ, viewQ]
         self.fieldNames = []
         self.data = []
-        guard let urlString = urlComponents.url?.absoluteString else {
-            print("invalid data")
-            return
-        }
-        
+        return urlComponents.url?.absoluteString
+    }
+    
+    func requestRecords(urlString: String, onComplete: @escaping ()->()) {
         Alamofire.request(urlString).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
                 let json = JSON(responseData.result.value!)
